@@ -1,18 +1,8 @@
 <div class="border-b-2 bg-gray-200 text-gray-500 rounded-t-md">
-    <span class="px-2 text-xs font-medium">{{ text }}</span>
-  
-    <ng-container *ngIf="type === 'select'; else textInput">
-      <select class="w-full px-2 pb-2 text-xl outline-none font-semibold bg-gray-200">
-        <!-- TODO: If new workout is not listed, allow users to create a new one -->
-        <option value="cycling">Cycling</option>
-        <option value="running">Running</option>
-        <option value="swimming">Swimming</option>
-        <option value="yoga">Yoga</option>
-      </select>
-    </ng-container>
-  
-    <ng-template #textInput>
-      <input class="w-full px-2 pb-2 text-xl outline-none font-semibold" type="text" />
-    </ng-template>
-  </div>
-  
+  <span class="px-2 text-xs font-medium">{{ text }}</span>
+  <input
+    placeholder="{{ placeholdertext }}"
+    class="w-full p-2 text-xl outline-none font-semibold"
+    type="text"
+  />
+</div>

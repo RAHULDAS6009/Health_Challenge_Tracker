@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class InputfeildComponent {
   @Input() text?: string;
-  @Input() type?: string ;
+  @Input() placeholdertext?: string;
 }

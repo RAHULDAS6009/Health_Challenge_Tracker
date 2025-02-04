@@ -1,0 +1,22 @@
+<table class="w-full bg-[#fefbff] shadow-2xl">
+  <thead>
+    <tr class="border-b-2 border-slate-400">
+      <th class="p-2">Name</th>
+      <th class="p-2">Workouts</th>
+      <th class="p-2">Number of Workouts</th>
+      <th class="p-2">Total Workout Minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b-2 border-slate-400" *ngFor="let user of users">
+      <td class="text-center p-2">{{ user.name }}</td>
+      <td class="text-center p-2">
+        {{ getWorkoutTypes(user) }}
+      </td>
+      <td class="text-center p-2">{{ user.workouts.length }}</td>
+      <td class="text-center p-2">
+        {{ calculateUserWorkoutMinutes(user) }}
+      </td>
+    </tr>
+  </tbody>
+</table>
