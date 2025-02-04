@@ -1,11 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-select',
-  imports: [],
+  standalone: true,
   templateUrl: './select.component.html',
-  styleUrl: './select.component.css'
+  styleUrls: ['./select.component.css'],
 })
 export class SelectComponent {
-@Input() text?:string;
+  @Input() text?: string;
+  @Output() selectionChange = new EventEmitter<string>();
+
+  onSelectChange(event: Event) {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+    this.selectionChange.emit(selectedValue);
+  }
 }

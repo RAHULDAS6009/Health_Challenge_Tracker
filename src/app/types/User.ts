@@ -1,5 +1,6 @@
+
 export interface Workout{
-    type:'Cycling' | 'Swimming' | 'Yoga' | 'Running';
+    type: string;
     minutes:number
 }
 export interface User{

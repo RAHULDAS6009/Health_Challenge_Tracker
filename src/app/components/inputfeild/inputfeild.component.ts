@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class InputfeildComponent {
   @Input() text?: string;
-  @Input() placeholdertext?: string;
+  @Input() placeholdertext: string="";
   @Output() textChange = new EventEmitter<string>();
   inputValue:string="";
 
