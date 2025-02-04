@@ -1,7 +1,9 @@
 <div class="border-b-2 bg-gray-200 text-gray-500 rounded-t-md">
   <span class="px-2 text-xs font-medium">{{ text }}</span>
   <input
-    placeholder="{{ placeholdertext }}"
+    [(ngModel)]="inputValue"
+    (ngModelChange)="onInputChange($event)"
+    [placeholder]="placeholdertext"
     class="w-full p-2 text-xl outline-none font-semibold"
     type="text"
   />

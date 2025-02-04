@@ -9,5 +9,9 @@ import { TablegridComponent } from '../../components/tablegrid/tablegrid.compone
   styleUrl: './workout-list.component.css'
 })
 export class WorkoutListComponent {
+searchText:string='';
 
+onSearchInput(value:string){
+  this.searchText=value;
+}
 }

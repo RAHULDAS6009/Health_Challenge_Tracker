@@ -1,4 +1,4 @@
-<table class="w-full bg-[#fefbff] shadow-2xl">
+<table class="w-full bg-[#fefbff] shadow-lg shadow-gray-900/70">
   <thead>
     <tr class="border-b-2 border-slate-400">
       <th class="p-2">Name</th>
@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="border-b-2 border-slate-400" *ngFor="let user of users">
+    <tr class="border-b-2 border-slate-400" *ngFor="let user of filteredUsers">
       <td class="text-center p-2">{{ user.name }}</td>
       <td class="text-center p-2">
         {{ getWorkoutTypes(user) }}
@@ -20,3 +20,6 @@
     </tr>
   </tbody>
 </table>
+<button>
+  Next
+</button>
