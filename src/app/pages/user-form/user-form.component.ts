@@ -11,7 +11,7 @@ import { v4 as uuid } from 'uuid';
   selector: 'app-user-form',
   standalone: true,
   imports: [InputfeildComponent, SelectComponent, ButtonComponent],
-  templateUrl: './user-form.component.html',
+  templateUrl: './user-form.component.html  ',
   styleUrl: './user-form.component.css',
 })
 export class UserFormComponent {
