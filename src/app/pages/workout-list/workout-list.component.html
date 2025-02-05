@@ -1,4 +1,26 @@
-<div class="p-3 flex flex-col gap-5">
-  <app-inputfeild (textChange)="onSearchInput($event)" text="" placeholdertext="Search"></app-inputfeild>
-  <app-tablegrid [searchValue]="searchText"></app-tablegrid>
+<div class="flex justify-center items-center h-screen bg-gray-100">
+  <div class="flex flex-col bg-white  gap-5 w-[80%] max-w-4xl p-6 rounded-lg shadow-xl">
+    
+    <!-- Search & Filter Section -->
+    <div class="flex justify-between items-center w-full p-4 bg-white  rounded-md shadow-md">
+      <div class="w-[45%]">
+        <app-inputfeild
+          (textChange)="onSearchInput($event, 'searchText')"
+          text="Search Username"
+          placeholdertext="Search"
+        ></app-inputfeild>
+      </div>
+      <div class="w-[45%]">
+        <app-select
+          (selectionChange)="onSearchInput($event, 'workoutType')"
+          text="Workout Type"
+        ></app-select>
+      </div>
+    </div>
+
+    <div class="h-[50vh] bg-white  p-4 rounded-md shadow-md overflow-y-auto">
+      <app-tablegrid [searchValue]="searchText"></app-tablegrid>
+    </div>
+
+  </div>
 </div>

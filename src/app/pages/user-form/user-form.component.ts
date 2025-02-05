@@ -32,7 +32,8 @@ export class UserFormComponent {
   }
 
   onSubmit() {
-    if (!this.username && !this.workouttime && !this.workouttype) {
+
+    if (!this.username && !this.workouttime && this.workouttype===undefined) {
       alert('All feilds are mandatory');
       return;
     }
