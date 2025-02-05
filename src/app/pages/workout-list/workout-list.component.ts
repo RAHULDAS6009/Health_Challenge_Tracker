@@ -20,4 +20,5 @@ export class WorkoutListComponent {
       this.workoutType = value;
     }
   }
+  
 }

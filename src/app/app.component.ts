@@ -8,7 +8,6 @@ import { WorkoutListComponent } from './pages/workout-list/workout-list.componen
 @Component({
   selector: 'app-root',
   imports: [RouterModule],
-  standalone:true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

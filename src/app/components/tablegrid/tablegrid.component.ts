@@ -14,6 +14,7 @@ import { UserService } from '../../services/userservice.service';
 })
 export class TablegridComponent {
   @Input() searchValue?: string;
+  @Input() searchWorkout?: string;
   currentPage: number = 1;
   itemsPerPage: number = 3;
   users: User[] = [];
@@ -22,22 +23,35 @@ export class TablegridComponent {
     this.users = this.user.getUsers();
   }
   get filteredUsers(): User[] {
-    if (!this.searchValue) return this.users;
-    return this.users.filter((user) =>
-      user.name
-        .toLowerCase()
-        .includes((this.searchValue ?? '').trim().toLowerCase())
-    );
+    let filtered = this.users; 
+  
+    if (this.searchValue) {
+      const lowerCaseSearchName = this.searchValue.trim().toLowerCase();
+      filtered = filtered.filter((user) =>
+        user.name.toLowerCase().includes(lowerCaseSearchName)
+      );
+    }
+  
+    if (this.searchWorkout) {
+      const lowerCaseSearchWorkout = this.searchWorkout.trim().toLowerCase();
+      filtered = filtered.filter((user) =>
+        user.workouts.some((workout) => 
+          workout.type.toLowerCase().includes(lowerCaseSearchWorkout)
+        )
+      );
+    }
+  
+    return filtered;
   }
 
   get totalPages(): number {
     return Math.ceil(this.filteredUsers.length / this.itemsPerPage);
   }
-
   get paginatedUser(): User[] {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     return this.filteredUsers.slice(startIndex, startIndex + this.itemsPerPage);
   }
+
 
   changePage(page: number) {
     if (page >= 1 && page <= this.totalPages) {
