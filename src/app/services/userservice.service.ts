@@ -13,7 +13,6 @@ export class UserService {
     try {
       const usersJson = localStorage.getItem(this.STORAGE_KEY);
       
-      // Handle null localStorage value
       if (!usersJson || usersJson === 'null') {
         return [];
       }
@@ -41,7 +40,7 @@ export class UserService {
         localStorage.setItem(this.STORAGE_KEY, JSON.stringify(users));
       } catch (error) {
         console.error('Error saving to localStorage:', error);
-        throw error; // Re-throw to be caught by outer try-catch
+        throw error; 
       }
     } catch (error) {
       console.error('Error adding user:', error);

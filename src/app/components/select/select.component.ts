@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-select',
-  standalone: true,
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.css'],
 })

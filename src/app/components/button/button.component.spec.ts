@@ -7,8 +7,8 @@ describe('ButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [], // Empty since component has no imports
-      declarations: [], // Empty since it's a standalone component
+      imports: [], 
+      declarations: [],
     }).compileComponents();
   });
 

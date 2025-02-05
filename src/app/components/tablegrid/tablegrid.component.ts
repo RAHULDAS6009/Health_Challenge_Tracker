@@ -8,7 +8,6 @@ import { UserService } from '../../services/userservice.service';
 
 @Component({
   selector: 'app-tablegrid',
-  standalone: true,
   imports: [CommonModule, ButtonComponent, SecondaryButtonComponent],
   templateUrl: './tablegrid.component.html',
   styleUrls: ['./tablegrid.component.css'],
