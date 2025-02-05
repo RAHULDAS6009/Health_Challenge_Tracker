@@ -4,6 +4,7 @@ import { userData } from '../../../../dummyUsers';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
 import { SecondaryButtonComponent } from '../secondary-button/secondary-button.component';
+import { UserserviceService } from '../../services/userservice.service';
 
 @Component({
   selector: 'app-tablegrid',
@@ -14,14 +15,19 @@ import { SecondaryButtonComponent } from '../secondary-button/secondary-button.c
 })
 export class TablegridComponent {
   @Input() searchValue?: string;
-  users: User[] = userData;
   currentPage: number = 1;
   itemsPerPage: number = 3;
+  users: User[] = [];
 
+  constructor(private user: UserserviceService) {
+    this.users = this.user.getUsers();
+  }
   get filteredUsers(): User[] {
     if (!this.searchValue) return this.users;
     return this.users.filter((user) =>
-      user.name.toLowerCase().includes((this.searchValue ?? '').trim().toLowerCase())
+      user.name
+        .toLowerCase()
+        .includes((this.searchValue ?? '').trim().toLowerCase())
     );
   }
 
@@ -59,7 +65,7 @@ export class TablegridComponent {
   changeItemsPerPage(event: Event) {
     const target = event.target as HTMLSelectElement;
     this.itemsPerPage = parseInt(target.value, 10);
-    this.currentPage=1
+    this.currentPage = 1;
   }
 
   calculateUserWorkoutMinutes(user: User): number {

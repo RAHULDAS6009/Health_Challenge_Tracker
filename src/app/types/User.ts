@@ -4,7 +4,7 @@ export interface Workout{
     minutes:number
 }
 export interface User{
-    id?:number;
+    id?:string;
     name:string;
     workouts:Workout[]
 }

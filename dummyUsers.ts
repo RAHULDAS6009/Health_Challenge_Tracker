@@ -2,7 +2,7 @@ import { User } from "./src/app/types/User";
 
 export const userData:User[] = [
     {
-      id: 1,
+      id: "1",
       name: 'John Doe',
       workouts: [
         { type: 'Running', minutes: 30 },
@@ -10,7 +10,7 @@ export const userData:User[] = [
       ],
     },
     {
-      id: 2,
+      id: "2",
       name: 'Jane Smith',
       workouts: [
         { type: 'Swimming', minutes: 60 },
@@ -18,7 +18,7 @@ export const userData:User[] = [
       ],
     },
     {
-      id: 3,
+      id: "3",
       name: 'Mike Johnson',
       workouts: [
         { type: 'Yoga', minutes: 50 },
@@ -26,7 +26,7 @@ export const userData:User[] = [
       ],
     },
     {
-      id: 4,
+      id: "4",
       name: 'Emily Davis',
       workouts: [
         { type: 'Running', minutes: 35 },
@@ -34,7 +34,7 @@ export const userData:User[] = [
       ],
     },
     {
-      id: 5,
+      id: "5",
       name: 'Robert Brown',
       workouts: [
         { type: 'Cycling', minutes: 55 },
@@ -42,7 +42,7 @@ export const userData:User[] = [
       ],
     },
     {
-      id: 6,
+      id: "6",
       name: 'Sophia Wilson',
       workouts: [
         { type: 'Yoga', minutes: 40 },
@@ -50,7 +50,7 @@ export const userData:User[] = [
       ],
     },
     {
-      id: 7,
+      id: "7",
       name: 'Daniel Martinez',
       workouts: [
         { type: 'Swimming', minutes: 50 },
@@ -58,7 +58,7 @@ export const userData:User[] = [
       ],
     },
     {
-      id: 8,
+      id: "8",
       name: 'Olivia Taylor',
       workouts: [
         { type: 'Running', minutes: 20 },
@@ -66,7 +66,7 @@ export const userData:User[] = [
       ],
     },
     {
-      id: 9,
+      id: "9",
       name: 'James Anderson',
       workouts: [
         { type: 'Cycling', minutes: 30 },
@@ -74,7 +74,7 @@ export const userData:User[] = [
       ],
     },
     {
-      id: 10,
+      id: "10",
       name: 'Emma Thomas',
       workouts: [
         { type: 'Yoga', minutes: 55 },
