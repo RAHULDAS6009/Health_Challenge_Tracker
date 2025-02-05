@@ -4,7 +4,7 @@ import { SelectComponent } from '../../components/select/select.component';
 import { ButtonComponent } from '../../components/button/button.component';
 import { User } from '../../types/User';
 import { Router } from '@angular/router';
-import { UserserviceService } from '../../services/userservice.service';
+import { UserService } from '../../services/userservice.service';
 import { v4 as uuid } from 'uuid';
 
 @Component({
@@ -19,7 +19,7 @@ export class UserFormComponent {
   workouttime: string = '';
   workouttype?: string;
 
-  constructor(private router: Router, private user: UserserviceService) {}
+  constructor(private router: Router, private user: UserService) {}
 
   onChange(value: string, field: 'username' | 'workouttime' | 'workouttype') {
     if (field === 'username') {

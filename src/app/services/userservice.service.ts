@@ -2,15 +2,24 @@ import { Injectable } from '@angular/core';
 import { User } from '../types/User';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class UserserviceService {
+export class UserService {
+  private readonly STORAGE_KEY = 'users';
+
   constructor() {}
 
   getUsers(): User[] {
     try {
-      const usersJson = localStorage.getItem('users');
-      return usersJson ? JSON.parse(usersJson) : [];
+      const usersJson = localStorage.getItem(this.STORAGE_KEY);
+      
+      // Handle null localStorage value
+      if (!usersJson || usersJson === 'null') {
+        return [];
+      }
+
+      const users = JSON.parse(usersJson);
+      return Array.isArray(users) ? users : [];
     } catch (error) {
       console.error('Error retrieving users:', error);
       return [];
@@ -21,14 +30,19 @@ export class UserserviceService {
     try {
       const users = this.getUsers();
       const existingUser = users.find(u => u.name === user.name);
-      
+
       if (existingUser) {
         existingUser.workouts.push(...user.workouts);
       } else {
         users.push(user);
       }
-      
-      localStorage.setItem('users', JSON.stringify(users));
+
+      try {
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(users));
+      } catch (error) {
+        console.error('Error saving to localStorage:', error);
+        throw error; // Re-throw to be caught by outer try-catch
+      }
     } catch (error) {
       console.error('Error adding user:', error);
     }

@@ -4,7 +4,7 @@ import { userData } from '../../../../dummyUsers';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
 import { SecondaryButtonComponent } from '../secondary-button/secondary-button.component';
-import { UserserviceService } from '../../services/userservice.service';
+import { UserService } from '../../services/userservice.service';
 
 @Component({
   selector: 'app-tablegrid',
@@ -19,7 +19,7 @@ export class TablegridComponent {
   itemsPerPage: number = 3;
   users: User[] = [];
 
-  constructor(private user: UserserviceService) {
+  constructor(private user: UserService) {
     this.users = this.user.getUsers();
   }
   get filteredUsers(): User[] {
